@@ -19,11 +19,11 @@
 ## Preview
 
 <p align="center">
-    <img src="https://i.imgur.com/n3AVCeI.gifv" alt="Demo">
+    <img src="https://i.imgur.com/n3AVCeI.gif" alt="Demo">
 </p>
 
 <p align="center">
-    <img src="https://i.imgur.com/2fZ0oeT.gifv" alt="Demo">
+    <img src="https://i.imgur.com/2fZ0oeT.gif" alt="Demo">
 </p>
 
 ---
