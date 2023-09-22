@@ -11,6 +11,7 @@
 -   [x] Ordenar tareas de más reciente a más antigua.
 -   [x] Dark Mode (Modo oscuro).
 -   [x] Cambiar el avatar del usuario al hacer click.
+-   [ ] El campo de texto de "Añadir tarea" debe expandirse al pulsar el botón de "+".
 -   [ ] Cambiar el idioma de la aplicación (Español e Inglés).
 -   [ ] Guardar tareas en el dispositivo.
 -   [ ] Notificaciones de tareas pendientes.
