@@ -1,32 +1,39 @@
 import 'package:flutter/material.dart';
 import 'package:uuid/uuid.dart';
 import 'package:provider/provider.dart';
+// Importo los widgets que he creado
 import 'package:my_app/model/task.dart';
 import 'package:my_app/widgets/task_item.dart';
 import 'package:my_app/widgets/theme_notifier.dart';
-import 'avatar_changer.dart';
+import 'package:my_app/widgets/avatar_changer.dart';
+import 'package:my_app/widgets/hello_world.dart';
 import 'package:my_app/colors.dart';
 
+// Clase que representa la pantalla principal de la aplicación (hereda de StatefulWidget)
 class Home extends StatefulWidget {
   const Home({Key? key}) : super(key: key);
 
-  @override
+  @override // Crea el estado de la pantalla principal
   State<Home> createState() => _HomeState();
 }
 
+// Clase que representa el estado de la pantalla principal
 class _HomeState extends State<Home> {
-  final taskList = Task.taskList();
-  final _taskController = TextEditingController();
-  List<Task> _foundTasks = [];
+  final taskList = Task.taskList(); // Lista de tareas
+  final _taskController =
+      TextEditingController(); // Controlador del TextField (para añadir tareas)
+  List<Task> _foundTasks = []; // Lista de tareas encontradas
 
-  @override
+  @override // Inicializo la lista de tareas encontradas con la lista de tareas (creadas en el modelo)
   void initState() {
     _foundTasks = taskList;
     super.initState();
   }
 
+  // Método que construye la pantalla principal (obligatorio el método build para todos los widgets)
   @override
   Widget build(BuildContext context) {
+    // Scaffold es un widget que representa la estructura básica de una pantalla (AppBar, body, etc.)
     return Scaffold(
       appBar: AppBar(
         elevation: 0,
@@ -41,29 +48,7 @@ class _HomeState extends State<Home> {
             },
             icon: const Icon(Icons.lightbulb_outline),
           ),
-          IconButton(
-            tooltip: "Mensaje",
-            onPressed: () {
-              showDialog(
-                  context: context,
-                  builder: (context) {
-                    return AlertDialog(
-                      title: const Text("¡Hola, mundo!"),
-                      content: const Text(
-                          "Has presionado el botón, pero no hay nada más que hacer aquí. Por qué no intentas pulsar la imagen de perfil?"),
-                      actions: [
-                        TextButton(
-                          child: const Text("Ok"),
-                          onPressed: () {
-                            Navigator.of(context).pop();
-                          },
-                        )
-                      ],
-                    );
-                  });
-            },
-            icon: const Icon(Icons.adb),
-          ),
+          const HelloWorldButton()
         ],
         title: const Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -84,6 +69,7 @@ class _HomeState extends State<Home> {
                 ? primaryColor
                 : primaryColorDark,
       ),
+      // Stack es un widget que permite apilar widgets (en este caso, el TextField y la lista de tareas)
       body: Stack(
         children: [
           Container(
@@ -95,12 +81,13 @@ class _HomeState extends State<Home> {
                 opacity: 0.5,
               ),
             ),
+            // Column es un widget que permite apilar widgets en forma de columna
             child: Column(
               children: [
                 searchBox(
                   context.watch<ThemeNotifier>().currentTheme,
                 ),
-                // Lista de tareas
+                // Expanded es un widget que permite expandir un widget hijo para que ocupe todo el espacio disponible
                 Expanded(
                   child: ListView(
                     children: [
@@ -115,6 +102,7 @@ class _HomeState extends State<Home> {
                           ),
                         ),
                       ),
+                      // Recorro la lista de tareas encontradas y creo un widget TaskItem por cada tarea
                       for (Task task in _foundTasks.reversed)
                         TaskItem(
                           task: task,
@@ -127,8 +115,10 @@ class _HomeState extends State<Home> {
               ],
             ),
           ),
+          // Align es un widget que permite alinear un widget hijo en una posición concreta
           Align(
             alignment: Alignment.bottomCenter,
+            // Row es un widget que permite apilar widgets en forma de fila
             child: Row(children: [
               Expanded(
                 child: Container(
@@ -179,12 +169,14 @@ class _HomeState extends State<Home> {
     );
   }
 
+// Cambia el estado de una tarea (completa/incompleta)
   void _handleTaskChange(Task task) {
     setState(() {
       task.completed = !task.completed!;
     });
   }
 
+// Elimina una tarea
   void _handleTaskDelete(String id) {
     setState(() {
       taskList.removeWhere((element) => element.id == id);
@@ -193,7 +185,11 @@ class _HomeState extends State<Home> {
     });
   }
 
+// Añade una tarea
   void addTask(String title) {
+    if (title.isEmpty) {
+      title = 'No title ${const Uuid().v4()}';
+    }
     setState(() {
       taskList.add(Task(
         id: const Uuid().v4().toString(),
@@ -201,9 +197,10 @@ class _HomeState extends State<Home> {
       ));
     });
 
-    _taskController.clear();
+    _taskController.clear(); // Limpio el input después de agregar una tarea
   }
 
+// Filtra las tareas según el texto introducido en el TextField
   void _filterToSearch(String query) {
     List<Task> results = [];
     if (query.isEmpty) {
@@ -219,6 +216,7 @@ class _HomeState extends State<Home> {
     });
   }
 
+// Widget que representa el TextField para buscar tareas
   Widget searchBox(ThemeData currentTheme) {
     return Container(
       padding: const EdgeInsets.symmetric(horizontal: 5),
@@ -229,7 +227,8 @@ class _HomeState extends State<Home> {
         borderRadius: BorderRadius.circular(20),
       ),
       child: TextField(
-        onChanged: (value) => _filterToSearch(value),
+        onChanged: (value) =>
+            _filterToSearch(value), // Filtra las tareas mientras se escribe
         decoration: const InputDecoration(
           contentPadding: EdgeInsets.all(15),
           border: InputBorder.none,

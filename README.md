@@ -1,16 +1,41 @@
-# my_app
+# TASKS LIST APP - Flutter
 
-A new Flutter project.
+**Autor**: [Adan-Perez](https://github.com/Adan-Perez)
 
-## Getting Started
+## Funcionalidades
 
-This project is a starting point for a Flutter application.
+-   [x] Botón que muestra un dialog/modal con el texto "Hola mundo".
+-   [x] Crear tareas, editarlas y eliminarlas.
+-   [x] Marcar tareas como completadas (tachadas).
+-   [x] Filtrar tareas en el buscador.
+-   [x] Ordenar tareas de más reciente a más antigua.
+-   [x] Dark Mode (Modo oscuro).
+-   [x] Cambiar el avatar del usuario al hacer click.
+-   [] Cambiar el idioma de la aplicación (Español e Inglés).
+-   [] Guardar tareas en el dispositivo.
+-   [] Notificaciones de tareas pendientes.
+-   [] Guardar tareas en una base de datos (SQLite o externa).
 
-A few resources to get you started if this is your first Flutter project:
+## Preview
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+<p align="center">
+    <img src="https://i.imgur.com/V2dbBb6.gif" alt="Demo">
+</p>
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+---
+
+## Screenshots
+
+<p align="center">
+    <img src="https://i.imgur.com/3Z2Z3ZM.png" alt="Screenshot">
+</p>
+
+---
+
+Developed with ❤ by [Adan-Perez](https://github.com/Adan-Perez)
+
+<p align="center" 
+    style="width: 100%; height: 100%;"
+>
+  <img src="https://storage.googleapis.com/sticker-prod/Wren242GEdiHYWm6ZGJp/5.png" alt="naruto-image">
+</p>

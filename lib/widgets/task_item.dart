@@ -1,15 +1,18 @@
 import 'package:flutter/material.dart';
-import '../model/task.dart';
+import 'package:my_app/model/task.dart';
 
+// Clase que representa un elemento de la lista de tareas
 class TaskItem extends StatelessWidget {
-  final Task task;
-  final onTaskToggle;
-  final onTaskDelete;
+  final Task task; // Tarea a representar en el elemento de la lista
+  final onTaskToggle; // Función para manejar la acción de cambiar el estado de la tarea
+  final onTaskDelete; // Función para manejar la acción de eliminar la tarea
 
+  // Constructor de TaskItem, debe tener una tarea (task) y dos funciones como parámetros opcionales
   const TaskItem(
       {Key? key, required this.task, this.onTaskToggle, this.onTaskDelete})
       : super(key: key);
 
+  // Método que construye el elemento de la lista de tareas
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -17,7 +20,7 @@ class TaskItem extends StatelessWidget {
       child: ListTile(
           onTap: () {
             onTaskToggle(task);
-          },
+          }, // Llama a la función onTaskToggle cuando se toca el ListTile
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(20),
           ),
@@ -30,7 +33,7 @@ class TaskItem extends StatelessWidget {
                   : Icons.check_circle_outline,
               color: Colors.green),
           title: Text(
-            task.title ?? "Sin título",
+            task.title!,
             style: TextStyle(
                 color: Colors.black,
                 decoration: task.completed == true
@@ -43,8 +46,7 @@ class TaskItem extends StatelessWidget {
             padding: const EdgeInsets.all(0),
             onPressed: () {
               onTaskDelete(task.id);
-              print("Eliminando tarea ${task.id}");
-            },
+            }, // Llama a la función onTaskDelete cuando se toca el IconButton
             icon: const Icon(Icons.delete_outline),
             color: Colors.red,
           )),
