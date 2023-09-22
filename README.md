@@ -11,15 +11,19 @@
 -   [x] Ordenar tareas de más reciente a más antigua.
 -   [x] Dark Mode (Modo oscuro).
 -   [x] Cambiar el avatar del usuario al hacer click.
--   [] Cambiar el idioma de la aplicación (Español e Inglés).
--   [] Guardar tareas en el dispositivo.
--   [] Notificaciones de tareas pendientes.
--   [] Guardar tareas en una base de datos (SQLite o externa).
+-   [ ] Cambiar el idioma de la aplicación (Español e Inglés).
+-   [ ] Guardar tareas en el dispositivo.
+-   [ ] Notificaciones de tareas pendientes.
+-   [ ] Guardar tareas en una base de datos (SQLite o externa).
 
 ## Preview
 
 <p align="center">
-    <img src="https://i.imgur.com/V2dbBb6.gif" alt="Demo">
+    <img src="https://i.imgur.com/n3AVCeI.gifv" alt="Demo">
+</p>
+
+<p align="center">
+    <img src="https://i.imgur.com/2fZ0oeT.gifv" alt="Demo">
 </p>
 
 ---
