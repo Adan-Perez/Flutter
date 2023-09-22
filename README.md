@@ -19,7 +19,7 @@
 
 ## Preview
 
-<div style="display: flex; justify-content: center;">
+<div style="grid-template-columns: repeat(2, 1fr); display: grid; justify-items: center; align-items: center;">
     <img src="https://i.imgur.com/n3AVCeI.gif" alt="Demo" style="width: 250px; margin: 10px;">
     <img src="https://i.imgur.com/2fZ0oeT.gif" alt="Demo" style="width: 250px; margin: 10px;">
 </div>
