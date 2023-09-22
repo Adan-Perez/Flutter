@@ -18,21 +18,20 @@
 
 ## Preview
 
-<p align="center">
-    <img src="https://i.imgur.com/n3AVCeI.gif" alt="Demo">
-</p>
-
-<p align="center">
-    <img src="https://i.imgur.com/2fZ0oeT.gif" alt="Demo">
-</p>
+<div style="display: flex; justify-content: center;">
+    <img src="https://i.imgur.com/n3AVCeI.gif" alt="Demo" style="width: 250px; margin: 10px;">
+    <img src="https://i.imgur.com/2fZ0oeT.gif" alt="Demo" style="width: 250px; margin: 10px;">
+</div>
 
 ---
 
 ## Screenshots
 
-<p align="center">
-    <img src="https://i.imgur.com/3Z2Z3ZM.png" alt="Screenshot">
-</p>
+<div style="grid-template-columns: repeat(3, 1fr); display: grid; justify-items: center; align-items: center;">
+    <img src="https://i.imgur.com/SbwR0IA.jpg" alt="Screenshot" style="width: 250px; margin: 10px;">
+    <img src="https://i.imgur.com/gF2YCp3.jpg" alt="Screenshot" style="width: 250px; margin: 10px;">
+     <img src="https://i.imgur.com/wBwhwB4.jpg" alt="Screenshot" style="width: 250px; margin: 10px;">
+</div>
 
 ---
 
