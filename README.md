@@ -29,9 +29,9 @@
 ## Screenshots
 
 <div style="grid-template-columns: repeat(3, 1fr); display: grid; justify-items: center; align-items: center;">
-    <img src="https://i.imgur.com/jmVhg2G.jpg" alt="Screenshot" style="width: 250px; margin: 10px;">
-    <img src="https://i.imgur.com/Xsu6tyH.jpg" alt="Screenshot" style="width: 250px; margin: 10px;">
-     <img src="https://i.imgur.com/QtU52qh.jpg" alt="Screenshot" style="width: 250px; margin: 10px;">
+    <img src="https://i.imgur.com/SbwR0IA.jpg" alt="Screenshot" style="width: 250px; margin: 10px;">
+    <img src="https://i.imgur.com/gF2YCp3.jpg" alt="Screenshot" style="width: 250px; margin: 10px;">
+    <img src="https://i.imgur.com/wBwhwB4.jpg" alt="Screenshot" style="width: 250px; margin: 10px;">
 </div>
 
 ---
